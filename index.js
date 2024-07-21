@@ -57,7 +57,7 @@ app.get("/posts", async (req, res) => {
 app.get("/posts/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id); // Convert the id in roothandler from string to integer
-    console.log(`GET specific post id: ${id}`);
+    //console.log(`GET specific post id: ${id}`);
 
     const post = posts.find((p) => p.id === id); // Find the joke with the matching id
     if (post) {
@@ -116,7 +116,7 @@ app.patch("/posts/:id", async (req, res) => {
     if (postIndex !== -1) {
       posts[postIndex] = updatePost;
       res.json(posts[postIndex]);
-      console.log(posts[postIndex]);
+      
     } else {
       res.status(404).send("Indicated Post not found"); // If the joke is not found, respond with 404 status
     }
